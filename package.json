@@ -30,7 +30,7 @@
   "homepage": "https://github.com/PedroLamas/typescript-package-template#readme",
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^25.1.2",
+    "@types/jest": "^26.0.10",
     "@types/mocha": "^7.0.1",
     "@types/node": "^13.7.1",
     "@typescript-eslint/eslint-plugin": "^2.2.0",
