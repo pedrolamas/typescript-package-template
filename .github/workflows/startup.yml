@@ -1,24 +1,22 @@
-name: CI
+name: Welcome
 
 on:
   push:
-  pull_request:
 
 jobs:
   build:
+    if: endsWith(github.ref, '/master') && ! endsWith(github.repository, '-template')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - if: endsWith(github.repository, '-template')
-        run: |
+        with:
+          ref: master
+      - run: |
           export GITHUB_REPOSITORY_NAME=${GITHUB_REPOSITORY/*\/}
 
           cat README.md | envsubst `env | awk -F = '{printf "\$%s,", $1}'` > README.md
           cat package.json | envsubst `env | awk -F = '{printf "\$%s,", $1}'` > package.json
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - run: yarn
-      - run: yarn lint
-      - run: yarn build
-      - run: yarn test
+
+          rm .github/workflows/startup.yml
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
