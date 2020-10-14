@@ -1,5 +1,5 @@
 {
-  "name": "typescript-package-template",
+  "name": "${GITHUB_REPOSITORY_NAME}",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
@@ -19,15 +19,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PedroLamas/typescript-package-template.git"
+    "url": "git+https://github.com/${GITHUB_REPOSITORY}.git"
   },
   "keywords": [],
   "author": "Pedro Lamas <pedrolamas@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PedroLamas/typescript-package-template/issues"
+    "url": "https://github.com/${GITHUB_REPOSITORY}/issues"
   },
-  "homepage": "https://github.com/PedroLamas/typescript-package-template#readme",
+  "homepage": "https://github.com/${GITHUB_REPOSITORY}#readme",
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "^26.0.14",

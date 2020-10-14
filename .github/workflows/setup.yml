@@ -1,0 +1,25 @@
+name: Setup
+
+on:
+  push:
+
+jobs:
+  build:
+    if: ${{ ! endsWith(github.repository, '-template') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - run: |
+          export GITHUB_REPOSITORY_NAME=${GITHUB_REPOSITORY/*\/}
+
+          for file in $(find . -type f -name "*.template"); do
+            envsubst `env | awk -F = '{printf "\$%s,", $1}'` < $file > ${file::-9}
+
+            rm $file
+          done
+
+          rm .github/workflows/setup.yml
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
