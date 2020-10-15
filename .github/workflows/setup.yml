@@ -11,15 +11,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: master
-      - run: |
-          export GITHUB_REPOSITORY_NAME=${GITHUB_REPOSITORY/*\/}
-
-          for file in $(find . -type f -name "*.template"); do
-            envsubst `env | awk -F = '{printf "\$%s,", $1}'` < $file > ${file::-9}
-
-            rm $file
-          done
-
-          rm .github/workflows/setup.yml
+      - name: Build templates output
+        uses: PedroLamas/handlebars-action@v1
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3

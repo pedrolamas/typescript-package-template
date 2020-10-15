@@ -1,5 +1,5 @@
 {
-  "name": "${GITHUB_REPOSITORY_NAME}",
+  "name": "{{ github.repository_name }}",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
@@ -19,15 +19,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/${GITHUB_REPOSITORY}.git"
+    "url": "git+https://github.com/{{ github.repository }}.git"
   },
   "keywords": [],
   "author": "Pedro Lamas <pedrolamas@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/${GITHUB_REPOSITORY}/issues"
+    "url": "https://github.com/{{ github.repository }}/issues"
   },
-  "homepage": "https://github.com/${GITHUB_REPOSITORY}#readme",
+  "homepage": "https://github.com/{{ github.repository }}#readme",
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "^26.0.14",
