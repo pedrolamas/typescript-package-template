@@ -19,15 +19,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PedroLamas/typescript-package-template.git"
+    "url": "git+https://github.com/pedrolamas/typescript-package-template.git"
   },
   "keywords": [],
   "author": "Pedro Lamas <pedrolamas@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PedroLamas/typescript-package-template/issues"
+    "url": "https://github.com/pedrolamas/typescript-package-template/issues"
   },
-  "homepage": "https://github.com/PedroLamas/typescript-package-template#readme",
+  "homepage": "https://github.com/pedrolamas/typescript-package-template#readme",
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "^26.0.14",
