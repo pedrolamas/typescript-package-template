@@ -1,6 +1,6 @@
 # {{ github.repository_name }}
 
-![Project Maintenance](https://img.shields.io/maintenance/yes/2020.svg)
+![Project Maintenance](https://img.shields.io/maintenance/yes/{{ date.year }}.svg)
 [![License](https://img.shields.io/github/license/{{ github.repository }}.svg)](https://github.com/{{ github.repository }}/blob/master/LICENSE)
 
 ![CI](https://github.com/{{ github.repository }}/workflows/CI/badge.svg)
