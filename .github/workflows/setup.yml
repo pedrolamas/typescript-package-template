@@ -12,6 +12,6 @@ jobs:
         with:
           ref: master
       - name: Build templates output
-        uses: PedroLamas/handlebars-action@v1
+        uses: pedrolamas/handlebars-action@v1.0.4
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
