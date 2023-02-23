@@ -2,16 +2,26 @@ name: Setup
 
 on:
   push:
+    branches:
+      - master
 
 jobs:
   build:
     if: ${{ ! endsWith(github.repository, '-template') }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
           ref: master
+
       - name: Build templates output
-        uses: pedrolamas/handlebars-action@v2.0.0
+        uses: pedrolamas/handlebars-action@v2
+
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ github.token }}
